@@ -1,0 +1,11 @@
+body {
+  margin: 0;
+  background: #2f2f2f;
+  font-family: sans-serif;
+}
+
+.strap-container {
+  background-image: url(./images/background.png);
+}
+
+/*# sourceMappingURL=styles.css.map */
