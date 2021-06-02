@@ -1,0 +1,3 @@
+function createSubmissionText() {
+  return null;
+}
