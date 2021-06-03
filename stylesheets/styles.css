@@ -36,21 +36,54 @@ button {
   background: rgba(47, 47, 47, 0.75);
 }
 
+@media screen and (max-width: 950px) {
+  .signup {
+    flex-direction: column;
+    padding: 30px;
+    margin: 30px;
+  }
+}
+@media screen and (max-width: 550px) {
+  .signup {
+    margin: 15px;
+  }
+}
 .signup-logo img {
   max-width: 270px;
   margin-right: 60px;
 }
 
+@media screen and (max-width: 950px) {
+  .signup-logo img {
+    max-width: 230px;
+    margin-right: 0;
+    margin-bottom: 30px;
+  }
+}
 .signup-elements {
   align-self: flex-start;
 }
 .signup-elements p:first-of-type {
   font-weight: 300;
   font-size: 36px;
+  line-height: 48px;
   color: #29ae6e;
   margin-top: 0;
 }
 
+@media screen and (max-width: 950px) {
+  .signup-elements {
+    align-self: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+@media screen and (max-width: 550px) {
+  .signup-elements p:first-of-type {
+    text-align: center;
+  }
+}
 form {
   display: flex;
   flex-direction: column;
@@ -94,6 +127,12 @@ form input[type=checkbox]:not(:checked) ~ .checkbox-icon::after {
   font-weight: 400;
   color: white;
 }
+@media screen and (max-width: 550px) {
+  form input[type=checkbox]:not(:checked) ~ .checkbox-icon::after {
+    transform: translate(-51px, -14px);
+    font-size: 48px;
+  }
+}
 form input[type=checkbox]:checked ~ .checkbox-icon::after {
   content: "";
   pointer-events: none;
@@ -104,6 +143,12 @@ form input[type=checkbox]:checked ~ .checkbox-icon::after {
   font-size: 1.5em;
   font-weight: 900;
   color: #29ae6e;
+}
+@media screen and (max-width: 550px) {
+  form input[type=checkbox]:checked ~ .checkbox-icon::after {
+    transform: translate(-51px, -14px);
+    font-size: 48px;
+  }
 }
 form input[type=checkbox] {
   -webkit-appearance: none;
@@ -119,6 +164,12 @@ form input[type=checkbox]:hover {
 form input[type=checkbox]:checked {
   background-color: white;
 }
+@media screen and (max-width: 550px) {
+  form input[type=checkbox] {
+    min-height: 40px;
+    min-width: 40px;
+  }
+}
 form .checkbox-wrapper {
   display: flex;
   flex-direction: row;
@@ -130,6 +181,11 @@ form .checkbox-greentext {
   font-size: 14px;
   color: #29ae6e;
   font-style: italic;
+}
+@media screen and (max-width: 550px) {
+  form .checkbox-greentext {
+    display: inline-block;
+  }
 }
 form button {
   max-width: fit-content;
@@ -150,6 +206,18 @@ form button::before {
   font-family: "Font Awesome 5 Free";
   font-weight: 900;
   color: white;
+}
+
+@media screen and (max-width: 950px) {
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  form .textinput-wrapper,
+form .dropdown-wrapper {
+    align-self: stretch;
+  }
 }
 
 /*# sourceMappingURL=styles.css.map */
