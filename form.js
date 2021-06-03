@@ -19,7 +19,27 @@ function createSubmissionText() {
   signupElements.appendChild(messageText);
 }
 
+function toggleArrow() {
+  dropdownOpen = !dropdownOpen;
+  if (dropdownOpen) {
+    dropdownArrow.classList.add("dropdown-opened");
+  } else {
+    dropdownArrow.classList.remove("dropdown-opened");
+  }
+}
+
+function handleDropDownBlur() {
+  if (dropdownOpen) {
+    toggleArrow();
+  }
+}
+
 let signupElements = document.querySelector(".signup-elements");
 let signupButton = document.getElementById("signup-button");
+let dropdownMenu = document.getElementById("frequency");
+let dropdownArrow = document.querySelector(".dropdown-arrow");
+let dropdownOpen = false;
 
 signupButton.addEventListener("click", submitForm, false);
+dropdownMenu.addEventListener("click", toggleArrow, false);
+dropdownMenu.addEventListener("blur", handleDropDownBlur, false);

@@ -122,23 +122,44 @@ form {
     }
   }
   select {
+    -moz-appearance: none;
     -webkit-appearance: none;
+    appearance: none;
     color: black;
+    cursor: pointer;
   }
-  .dropdown-wrapper::after {
+
+  .dropdown-arrow {
+    position: absolute;
+    -webkit-transform: translate(-30px, 10px);
+    transform: translate(-30px, 10px);
+  }
+
+  .dropdown-arrow::after {
     position: absolute;
     pointer-events: none;
-    transform: translate(-30px, 10px);
+    -webkit-transform: rotateZ(0deg);
+    transform: rotateZ(0deg);
     content: "\f078";
     font-family: "Font Awesome\ 5 Free";
     font-weight: 900;
     color: $lightgreen;
+    -webkit-transition: -webkit-transform 0.2s;
+    transition: transform 0.2s;
+  }
+
+  .dropdown-arrow.dropdown-opened::after {
+    -webkit-transform: rotateZ(180deg);
+    transform: rotateZ(180deg);
+    -webkit-transition: -webkit-transform 0.2s;
+    transition: transform 0.2s;
   }
 
   input[type="checkbox"]:not(:checked) ~ .checkbox-icon::after {
     content: "\f0c8";
     pointer-events: none;
     position: absolute;
+    -webkit-transform: translate(-30px, -15px);
     transform: translate(-30px, -15px);
     margin-right: 10px;
     font-family: "Font Awesome 5 Free";
@@ -149,6 +170,7 @@ form {
 
   @media screen and (max-width: $tabletbp) {
     input[type="checkbox"]:not(:checked) ~ .checkbox-icon::after {
+      -webkit-transform: translate(-51px, -14px);
       transform: translate(-51px, -14px);
       font-size: 48px;
     }
@@ -158,23 +180,46 @@ form {
     content: "\f14a";
     pointer-events: none;
     position: absolute;
+    -webkit-transform: translate(-30px, -15px);
     transform: translate(-30px, -15px);
     margin-right: 10px;
     font-family: "Font Awesome 5 Free";
     font-size: 1.5em;
     font-weight: 900;
     color: $lightgreen;
+    -webkit-animation-name: displaycheckedbox;
+    -webkit-animation-duration: 0.25s;
+    -webkit-animation-iteration-count: 1;
+    animation-name: displaycheckedbox;
+    animation-duration: 0.25s;
+    animation-iteration-count: 1;
+  }
+
+  @keyframes displaycheckedbox {
+    0% {
+      -webkit-transform: translate(-30px, -15px) scale(0);
+      transform: translate(-30px, -15px) scale(0);
+      border-radius: 50%;
+    }
+    100% {
+      -webkit-transform: translate(-30px, -15px) scale(1);
+      transform: translate(-30px, -15px) scale(1);
+      border-radius: 0;
+    }
   }
 
   @media screen and (max-width: $tabletbp) {
     input[type="checkbox"]:checked ~ .checkbox-icon::after {
+      -webkit-transform: translate(-51px, -14px);
       transform: translate(-51px, -14px);
       font-size: 48px;
     }
   }
 
   input[type="checkbox"] {
+    -moz-appearance: none;
     -webkit-appearance: none;
+    appearance: none;
     height: 19px;
     width: 19px;
     margin: 5px 10px;
