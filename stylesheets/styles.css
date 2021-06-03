@@ -183,6 +183,20 @@ form input[type=checkbox]:checked ~ .checkbox-icon::after {
   }
 }
 @media screen and (max-width: 550px) {
+  @keyframes displaycheckedbox {
+    0% {
+      -webkit-transform: translate(-51px, -14px) scale(0);
+      transform: translate(-51px, -14px) scale(0);
+      border-radius: 50%;
+    }
+    100% {
+      -webkit-transform: translate(-51px, -14px) scale(1);
+      transform: translate(-51px, -14px) scale(1);
+      border-radius: 0;
+    }
+  }
+}
+@media screen and (max-width: 550px) {
   form input[type=checkbox]:checked ~ .checkbox-icon::after {
     -webkit-transform: translate(-51px, -14px);
     transform: translate(-51px, -14px);
