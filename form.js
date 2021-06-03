@@ -4,7 +4,12 @@ function submitForm(event) {
 }
 
 function createSubmissionText() {
-  signupElements.innerHTML = "";
+  //remove the form elements
+  while (signupElements.hasChildNodes()) {
+    signupElements.removeChild(signupElements.lastChild);
+  }
+
+  //create new nodes and add them to where the form area was
   let heading = document.createElement("P");
   heading.innerHTML = "Thanks for registering!";
   let messageText = document.createElement("P");

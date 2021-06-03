@@ -17,6 +17,9 @@ button {
 .strap-container {
   background: linear-gradient(rgba(3, 3, 3, 0.7), rgba(3, 3, 3, 0.7)), url(../images/background-compressed.png);
   display: flex;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
   align-items: center;
   justify-content: center;
 }
@@ -44,7 +47,6 @@ button {
 .signup-elements p:first-of-type {
   font-weight: 300;
   font-size: 36px;
-  line-height: 28px;
   color: #29ae6e;
   margin-top: 0;
 }
@@ -62,7 +64,7 @@ form select {
   border-radius: 4px;
   border: none;
   margin-bottom: 24px;
-  width: 360px;
+  width: 100%;
   box-sizing: border-box;
 }
 form input[type=text]::placeholder {
@@ -73,10 +75,9 @@ form select {
   color: black;
 }
 form .dropdown-wrapper::after {
-  position: relative;
+  position: absolute;
   pointer-events: none;
-  right: 36px;
-  top: 2px;
+  transform: translate(-30px, 10px);
   content: "";
   font-family: "Font Awesome 5 Free";
   font-weight: 900;

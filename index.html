@@ -19,27 +19,29 @@
             <div class="signup-logo">
                 <img src="images/logo.svg" alt=""></img>
             </div>
-            <div class="signup-elements">
+            <div class="signup-elements" aria-relevant="additions">
                 <p>Receive regular updates</p>
                 <form>
                     <div class="textinput-wrapper">
-                        <input name="email" type="text" placeholder="Enter email..."></input>
+                        <input name="email" id="email" type="text" placeholder="Enter email..."></input>
                     </div>
                     
                     <div class="dropdown-wrapper">
-                        <select>
-                            <option>-- Select Frequency --</option>
-                            <option>Daily updates</option>
-                            <option>Bi-weekly updates</option>
-                            <option>Weekly updates</option>
-                            <option>Bi-monthly updates</option>
-                            <option>Monthly updates</option>
+                        <select name="frequency" id="frequency">
+                            <option value="unselected">-- Select Frequency --</option>
+                            <option value="daily">Daily updates</option>
+                            <option value="biweekly">Bi-weekly updates</option>
+                            <option value="weekly">Weekly updates</option>
+                            <option value="bimonthly">Bi-monthly updates</option>
+                            <option value="monthly">Monthly updates</option>
                         </select>
                     </div>
                     
-                    <div class="checkbox-wrapper"><input name="receiveemails" type="checkbox"><span class="checkbox-icon"></span>Yes, I'd like to receive marketing emails <span class="checkbox-greentext"> (optional)</span></input></div>
+                    <div class="checkbox-wrapper">
+                        <input name="receiveemails" type="checkbox" id="receiveemails"><span class="checkbox-icon"></span><label for="receiveemails">Yes, I'd like to receive marketing emails <span class="checkbox-greentext"> (optional)</span></label></input>
+                    </div>
                     
-                    <button name="signup-button" id="signup-button">Sign up today!</button>
+                    <button name="signup-button" id="signup-button" type="submit">Sign up today!</button>
                 </form>
             </div>
           </div>
